@@ -70,7 +70,7 @@ def LSB(audio, image):
             x = i*heigth + j
             joinAudio[x + 32] = setLastBit(joinAudio[x + 32],value)
 
-    if numOfFrames is not -1:
+    if numOfFrames != -1:
         return audioToFrame(joinAudio, numOfFrames)
     else:
         return joinAudio

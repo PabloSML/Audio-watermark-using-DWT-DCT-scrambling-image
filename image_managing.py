@@ -7,7 +7,7 @@ import sys
 
 #Return numpy array from a Image file
 def loadImage(path=""):
-    if path is "":
+    if path == "":
         sys.exit("LOAD IMAGE: Path must not be None!")
 
     img = Image.open(path)
@@ -15,16 +15,16 @@ def loadImage(path=""):
 
 #Show image from array or path
 def showImage(img):
-    if type(img) is not str:
+    if type(img) != str:
         img.show()
     else:
-        if img is "":
+        if img == "":
             sys.exit("SHOW IMAGE: Path must not be None!")
         Image.open(img).show()
 
 #Save image from array or Image file
 def saveImage(img, path):
-    if path is "":
+    if path == "":
         sys.exit("SHOW IMAGE: Path must not be None!")
     img.save(path)
 
@@ -37,7 +37,7 @@ def binarization(img):
 
 #Return image size
 def imgSize(img):
-    if type(img) is np.ndarray:
+    if type(img) == np.ndarray:
         width, heigth = (img.shape[1], img.shape[0])
     else:
         width, heigth = img.size
@@ -182,20 +182,20 @@ def iupperTriangularMappingTransform(img, iteration, c, a=-1, d=-1):
     return transformed
 
 def mappingTransform(mode, img, iteration, c, a=-1, d=-1):
-    if mode is "lower":
+    if mode == "lower":
         m = lowerTriangularMappingTransform(img,iteration,c,a,d)
         return m
-    if mode is "upper":
+    if mode == "upper":
         m = upperTriangularMappingTransform(img,iteration,c,a,d)
         return m
     else:
         sys.exit("MAPPING TRANSFORM: Mode must be lower or upper!")
 
 def imappingTransform(mode, img, iteration, c, a=-1, d=-1):
-    if mode is "lower":
+    if mode == "lower":
         m = ilowerTriangularMappingTransform(img,iteration,c,a,d)
         return m
-    if mode is "upper":
+    if mode == "upper":
         m = iupperTriangularMappingTransform(img,iteration,c,a,d)
         return m
     else:

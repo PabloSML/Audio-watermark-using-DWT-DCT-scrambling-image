@@ -16,15 +16,15 @@ def imodule(a, m):
 
 #Return first or second number coprime with m
 def coprime(m, mode="first"):
-    if mode is not "first" and mode is not "second":
+    if mode != "first" and mode != "second":
         sys.exit("COPRIME: Mode must be first or second!")
 
     found = 0
     for x in range(2,m):
         if math.gcd(x,m) == 1:
-            if mode is "first":
+            if mode == "first":
                 return x
-            elif mode is "second":
+            elif mode == "second":
                 if found < 1:
                     found += 1
                 else:

@@ -88,7 +88,7 @@ def audioToFrame(audio, len):
     for i in range(numFrames):
         frames.append(audio[i*len : (i*len)+len])
     
-    return np.asarray(frames)
+    return np.asarray(frames, dtype=object)
 
 #Join frames to single array
 def frameToAudio(frames):
